@@ -23,6 +23,11 @@ $( document ).ready(function() {
     //      (NOTE: You do not have to perform any validation on the data as
     //          a base requirement.)
 
+    //find a button inside ID login-form.
+    $('#login-form .btn').on('click', function(event) {
+      $('#login-form').hide();
+      $('.user-info').show();
+    });
 
     // TODO: Create a function to listen for clicks on all the "View Details"
     // buttons so that when a user clicks a "View Details" button they see
