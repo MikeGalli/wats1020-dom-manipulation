@@ -97,5 +97,8 @@ $( document ).ready(function() {
     $('.greatest-progress').css('width', greatestPercent);                    /*8*/
     console.log(greatPercent);
     console.log(greatestPercent);
+    $('.boxGreat').html("Number of votes for Great are: " + voteCounts.great);
+    $('.boxGreatest').html("Number of votes for Greatest of all time are: " + voteCounts.great);
+    $('.boxTotal').html("The total number of votes is: " + voteCounts.great);
     });
 });
