@@ -98,7 +98,7 @@ $( document ).ready(function() {
     console.log(greatPercent);
     console.log(greatestPercent);
     $('.boxGreat').html("Number of votes for Great are: " + voteCounts.great);
-    $('.boxGreatest').html("Number of votes for Greatest of all time are: " + voteCounts.great);
-    $('.boxTotal').html("The total number of votes is: " + voteCounts.great);
+    $('.boxGreatest').html("Number of votes for Greatest of all time are: " + voteCounts.greatest);
+    $('.boxTotal').html("The total number of votes is: " + voteCounts.total);
     });
 });
