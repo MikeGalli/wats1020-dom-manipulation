@@ -28,7 +28,7 @@ $( document ).ready(function() {
     $('#login-form .btn').on('click', function(event) {
       $('#login-form').hide();
       $('.user-info').show();
-      $('.user-fullname').text(userInfo.firstName + ' ' + userInfo.lastName);
+      $('.user-fullname').text(' ' + userInfo.firstName + ' ' + userInfo.lastName);
     });
 
     // TODO: Create a function to listen for clicks on all the "View Details"
@@ -82,6 +82,20 @@ $( document ).ready(function() {
           });
 
     });
+
+
+
+    $('.vote .btn').on('click', function(event){
+    console.log(event);
+    //var greatCnt = 0;
+    //var estCnt = 0;
+    //$("[data-vote=great]").style="width: 50%";
+    var targetElement = event.target;
+    targetElement.innerText = "View Details"
+
+
+
+});
     // TODO: Create a function that listens for clicks on the voting buttons and
     // looks at the `data-vote` attribute on each button to see what was voted for,
     // then determines the updated vote breakdown to adjust the progress bars.
