@@ -27,7 +27,7 @@ $( document ).ready(function() {
     $('#login-form .btn').on('click', function(event) {
       $('#login-form').hide();
       $('.user-info').show();
-      $('.user-fullname').val="ZZZ";
+      $('.user-fullname').val('zzz');
     });
 
     // TODO: Create a function to listen for clicks on all the "View Details"
