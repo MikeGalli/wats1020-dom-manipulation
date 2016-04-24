@@ -24,12 +24,10 @@ $( document ).ready(function() {
     //          a base requirement.)
 
     //find a button inside ID login-form.
+    //find a button inside ID login-form.
     $('#login-form .btn').on('click', function(event) {
       $('#login-form').hide();
       $('.user-info').show();
-      .find $('.user-fullname').each(function(index, el){
-        el.value('DDDD')
-          });
     });
 
     // TODO: Create a function to listen for clicks on all the "View Details"
