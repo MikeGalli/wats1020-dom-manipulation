@@ -5,41 +5,20 @@
 
 $( document ).ready(function() {
     var userInfo = {
-        firstName: 'Jane',
-        lastName: 'Doe'
+        firstName: 'Mike',
+        lastName: 'Galligar'
     };
     var voteCounts = {
         great: 0,
         greatest: 0,
         total: 0
     };
-    // Place all your Javascript code inside this "document ready" function so
-    // it does not run until the DOM is ready for Javascript manipulation.
 
-    // TODO: Create a function to listen for clicks on the "login" button.
-    //      1. When a user clicks the "login" button, hide the login
-    //          form elements on the page.
-    //      2. Fill the user's first and last name into `div.user-info`.
-    //      (NOTE: You do not have to perform any validation on the data as
-    //          a base requirement.)
-
-    //find a button inside ID login-form.
-    //find a button inside ID login-form.
     $('#login-form .btn').on('click', function(event) {
       $('#login-form').hide();
       $('.user-info').show();
       $('.user-fullname').text(' ' + userInfo.firstName + ' ' + userInfo.lastName);
     });
-
-    // TODO: Create a function to listen for clicks on all the "View Details"
-    // buttons so that when a user clicks a "View Details" button they see
-    // the content contained in the elements with the class "details" in the
-    // proper part of the screen.
-    //      1. When user clicks a "view details" button, find the parent of that element.
-    //      2. Within that parent, find all the elements that have the class `details`.
-    //      3. Toggle visibility of all the elements within that parent with the class `details`.
-    //      4. Change the text of the "view details" button to read "hide details" so the user
-    //          understands they can hide the text again.
 
 /*  VDB NOTES ON: VIEW DETAILS BUTTONS: 1 - 12:
     1) Get stuff in all the classes called “view-details”.
@@ -80,20 +59,43 @@ $( document ).ready(function() {
                   targetElement.innerText = "Hide Details"
               }
           });
-
     });
 
+/*   NOTES ON: Voting Progress: 1 - :
+  1) Find all items in class, '.vote'. Listen for a click in this class.
+  2) If the thing clicked in class '.vote'; has attribute: 'data-vote' && value of: "great"....
+  3) Increment the counters, voteCounts.great & voteCounts.total by 1
+    else:
+  4) If the thing clicked in class '.vote'; has attribute: 'data-vote' && value of: "greatest"....
+  5) Increment the counters, voteCounts.greatest & voteCounts.total by 1
+  6) Write these to console just to check progress on code writing: voteCounts.great, voteCounts.greatest, voteCounts.total
+  7) Create 2 variables to calculate & hold data. The data will be the percent of votes vs total number of votes.
+      % of great votes...
+      % of greatest votes....
+  8) Find the class: '.great-progress'. Change the CSS attribute width with the Value from: (7a)
+  9) Find the class: '.greatest-progress'. Change the CSS attribute width with the Value from: (7b)
+*/
 
+    $('.vote').on('click', function(event){                                   /*1*/
+        console.log(event);
+        if ($(this).attr('data-vote')==="great"){                             /*2*/
+            voteCounts.great++;                                               /*3*/
+            voteCounts.total++;
+        }else{
+            if ($(this).attr('data-vote')==="greatest"){                      /*4*/
+                voteCounts.greatest++;                                        /*5*/
+                voteCounts.total++;
+            }
+        }
+    console.log("gr "+ voteCounts.great);
+    console.log("Greatest" + voteCounts.greatest);                            /*6*/
+    console.log("total" + voteCounts.total);
 
-    
-    // TODO: Create a function that listens for clicks on the voting buttons and
-    // looks at the `data-vote` attribute on each button to see what was voted for,
-    // then determines the updated vote breakdown to adjust the progress bars.
-    //      1. Set up an event listener on the buttons with the `vote` class.
-    //      2. When a button is clicked, look at the `data-vote` attribute to determine
-    //          what the user is voting for ("great" or "greatest").
-    //      3. Increment the counter for whichever vote talley is affected.
-    //      4. Determine the respective percentages (out of 100) for each progress bar.
-    //      5. Modify the `width` attribute on each progress bar to set the updated percentage.
-
+    var greatPercent = voteCounts.great / voteCounts.total * 100 + '%';       /*7a*/
+    var greatestPercent = voteCounts.greatest / voteCounts.total * 100 + '%'; /*7b*/
+    $('.great-progress').css('width', greatPercent);                          /*8*/
+    $('.greatest-progress').css('width', greatestPercent);                    /*8*/
+    console.log(greatPercent);
+    console.log(greatestPercent);
+    });
 });
