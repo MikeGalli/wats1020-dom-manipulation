@@ -74,6 +74,7 @@ $( document ).ready(function() {
       % of greatest votes....
   8) Find the class: '.great-progress'. Change the CSS attribute width with the Value from: (7a)
   9) Find the class: '.greatest-progress'. Change the CSS attribute width with the Value from: (7b)
+  10) Add text representations of the voting data.
 */
 
     $('.vote').on('click', function(event){                                   /*1*/
@@ -94,11 +95,11 @@ $( document ).ready(function() {
     var greatPercent = voteCounts.great / voteCounts.total * 100 + '%';       /*7a*/
     var greatestPercent = voteCounts.greatest / voteCounts.total * 100 + '%'; /*7b*/
     $('.great-progress').css('width', greatPercent);                          /*8*/
-    $('.greatest-progress').css('width', greatestPercent);                    /*8*/
+    $('.greatest-progress').css('width', greatestPercent);                    /*9*/
     console.log(greatPercent);
     console.log(greatestPercent);
-    $('.boxGreat').html("Number of votes for Great are: " + voteCounts.great + "&nbsp;&nbsp;&nbsp;&nbsp;");
-    $('.boxGreatest').html("Number of votes for Greatest of all time are: " + voteCounts.greatest + "&nbsp;&nbsp;&nbsp;&nbsp;");
-    $('.boxTotal').html("The total number of votes is: " + voteCounts.total + "&nbsp;");
+    $('.boxGreat').html("Number of votes for Great are: " + voteCounts.great + "&nbsp;&nbsp;&nbsp;&nbsp;");/*10*/
+    $('.boxGreatest').html("Number of votes for Greatest of all time are: " + voteCounts.greatest + "&nbsp;&nbsp;&nbsp;&nbsp;");/*10*/
+    $('.boxTotal').html("The total number of votes is: " + voteCounts.total + "&nbsp;");/*10*/
     });
 });
