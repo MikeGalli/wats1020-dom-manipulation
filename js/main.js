@@ -4,14 +4,14 @@ $( document ).ready(function() {  //This function covers the whole file.
 
 ////   NOTES ON: VARIABLES    /////////////////////////////////////////////////
 ////   NOTES ON: VARIABLES    /////////////////////////////////////////////////
-    var userInfo = {
-        firstName: 'Mike',                                      /*1*/
-        lastName: 'Galligar'                                    /*1*/
+    var userInfo = {             //Object (uses culry braces)
+        firstName: 'Mike',       //attribute of the object above    /*1*/
+        lastName: 'Galligar'     //attribute of the object above    /*1*/
     };
     var voteCounts = {
-        great: 0,                                               /*1*/
-        greatest: 0,                                            /*1*/
-        total: 0                                                /*1*/
+        great: 0,        //attribute of the object above            /*1*/
+        greatest: 0,     //attribute of the object above            /*1*/
+        total: 0         //attribute of the object above            /*1*/
     };
 ////   NOTES ON: VARIABLES    /////////////////////////////////////////////////
 ////   NOTES ON: VARIABLES    /////////////////////////////////////////////////
@@ -79,6 +79,7 @@ $( document ).ready(function() {  //This function covers the whole file.
 //-------------------------------------------------------------------------------------
 /*  NOTES ON: VARIABLES
   1)  There are 5 variables here, used for storing data in functions that come later.
+      userInfo & voteCounts: are objects. The other pieces are attributes.
             userinfo.firstName - currently = Mike
             userinfo.lastName - currently = Galligar
             voteCounts.great - currently = 0
